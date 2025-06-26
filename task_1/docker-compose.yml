@@ -1,0 +1,10 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: foxford-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/site
+      - ./site/nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
